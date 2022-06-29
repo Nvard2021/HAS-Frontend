@@ -1,5 +1,4 @@
 # HAS-Frontend
-
 <!-- Install Webpack -->
 
 npm init
@@ -12,3 +11,7 @@ npm install webpack --save-dev
 
 npm run dev
 npm webpack-cli 
+
+
+<!-- Install ES Lint airbnb -->
+npx install-peerdeps --dev eslint-config-airbnb
