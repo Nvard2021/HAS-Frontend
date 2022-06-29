@@ -11,3 +11,7 @@ npm install webpack --save-dev
 
 npm run dev
 npm webpack-cli 
+
+
+<!-- Install ES Lint -->
+npm install eslint --save-dev
