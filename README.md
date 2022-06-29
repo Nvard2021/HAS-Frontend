@@ -13,5 +13,5 @@ npm run dev
 npm webpack-cli 
 
 
-<!-- Install ES Lint -->
-npm install eslint --save-dev
+<!-- Install ES Lint airbnb -->
+npx install-peerdeps --dev eslint-config-airbnb
