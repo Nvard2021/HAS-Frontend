@@ -1,16 +1,12 @@
-import React from "react";
-
-
 const ROUTES = {
-    Login: "/login",
-    Home: "/home",
-    Restaurant: "/restaurant",
-    Bar: "/bar",
-    Kitchen: "/kitchen",
-    MusicHall: "/musichall",
-    Events: "/events",
-    NotFound: "/error404"
-}
+  Login: "/login",
+  Home: "/home",
+  Restaurant: "/restaurant",
+  Bar: "/bar",
+  Kitchen: "/kitchen",
+  MusicHall: "/musichall",
+  Events: "/events",
+  NotFound: "/error404"
+};
 
 export default ROUTES;
-
