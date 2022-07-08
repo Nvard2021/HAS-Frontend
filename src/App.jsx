@@ -20,7 +20,7 @@ export default function App() {
                 <Route exact path="/bar" element={<Bar />}></Route>
                 <Route exact path="/kitchen" element={<Kitchen />}></Route>
                 <Route exact path="/musichall" element={<MusicHall />}></Route>
-                <Route exact path="/events" element={<Events />}></Route>
+                <Route exact path="/events" element={<Events />}></Route'>;''
             </Routes>
         </BrowserRouter>
     );
