@@ -1,63 +1,47 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-
+// import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
+import Val from '../components/common/Validation.jsx';
 import Button from '../components/common/Button.jsx';
 import Input from '../components/common/Input.jsx';
 import Checkbox from '../components/common/Checkbox.jsx';
 
 function App() {
-  // const [errorMessages, setErrorMessages] = useState({});
-  // const [isSubmitted, setIsSubmitted] = useState(false);
-  // const database = [
-  //   {
-  //     username: 'user',
-  //     password: 'pass',
-  //   },
-  // ];
-  // const errors = {
-  //   uname: 'Please enter a valid username. ',
-  //   pass: 'Please enter a valid password',
-  // };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   const { uname, pass } = document.forms[0];
-
-  //   const userData = database.find((user) => user.username === uname.value);
-
-  //   if (userData) {
-  //     if (userData.password !== pass.value) {
-  //       setErrorMessages({ name: 'pass', message: errors.pass });
-  //     } else {
-  //       setIsSubmitted(true);
-  //     }
-  //   } else {
-  //     setErrorMessages({ name: 'uname', message: errors.uname });
-  //   }
-  // };
-  // const renderErrorMessage = (name) => name === errorMessages.name && (
-  //   <div className="error">{errorMessages.message}</div>
-  // );
+  const [values, setValues] = useState({
+    username: '',
+    password: '',
+  });
+  const [errors, setErrors] = useState({});
+  const handleChange = (event) => {
+    setValues({
+      ...values,
+      [event.targed.name]: event.target.value,
+    });
+  };
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    setErrors(Val(values));
+  };
   return (
     <MainContainer>
       <FormComponent>
         <LogoImg>IMG</LogoImg>
         <InputContainer>
           <InputText>Username</InputText>
-          <Input type="text"/>
+          <Input type="text" name = "username" value={values.username} onChange={handleChange}/>
           {/* {renderErrorMessage('uname')} */}
+          {errors.username && <p classname="error">{errors.username}</p>}
           <InputText>Password</InputText>
-          <Input type="password"/>
+          <Input type="password" name = "password" value={values.password} onChange={handleChange}/>
+          {errors.password && <p classname="error">{errors.password}</p>}
           {/* {renderErrorMessage('pass')} */}
         </InputContainer>
         <CheckboxContainer>
-          <Checkbox type="radio"/>
+          <Checkbox type="radio" name = "radio"/>
         </CheckboxContainer>
         <ButtonContainer>
-          <Button content="LOGIN" />
+          <Button content="LOGIN" onClick={handleFormSubmit}/>
         </ButtonContainer>
       </FormComponent>
     </MainContainer>
