@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.header{
+    width: 100vw;
+    height: 100px;
+    background: #1E1E1E;
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
